@@ -1,11 +1,11 @@
-# Code Review Activity
+## Code Review Activity
 
-## JavaScript Code Review
+### JavaScript Code Review
 
-**original.js** - Original file to be reviewed
+**original.js** - Original file to be reviewed  
 **reviewed.js** - Reviewed/recoded version of original file
 
-## Ruby Code Review
+### Ruby Code Review
 
-**original.rb** - Original file to be reviewed
+**original.rb** - Original file to be reviewed  
 **reviewed.rb** - Reviewed/recoded version of original file
