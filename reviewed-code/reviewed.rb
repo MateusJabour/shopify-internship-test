@@ -1,4 +1,4 @@
-  class ShopifyAPIClient
+class ShopifyAPIClient
   attr_accessor :shop_id
   SECRET_API_KEY = "asdasdasQWRESFSDFVSDFASDFSADFASDF123123ASDASD$%$%"
 # I changed from attr_reader to attr_acessor, taking off the necessity of creating a setter, 
