@@ -8,14 +8,14 @@
     var init = function (products) {
       var variants = sortVariants(products);
       return calculatePrice(variants);
-    }
+    };
 //priceCalculator.compareWeights is a callback to sort an array of objects by their weights(grams property).
     var compareWeights = function (itemA, itemB) {
-      var x = itemA.grams; 
+      var x = itemA.grams;
       var y = itemB.grams;
 
       return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-    }
+    };
 //priceCalculator.sortVariants will create an empty array, fill it with the products variants and return it sorted by the weight, starting from the lightest item
 //and ending on the heaviest.
     var sortVariants = function (products) {
@@ -28,7 +28,7 @@
       });
 
       return productVariants.sort(compareWeights);
-    }
+    };
 //priceCalculator.calculatePrice will calculate how much will cost for the maximum of items totalizing 100kg, then it will return an array containing objects with two properties: title and value.
 //There are objects for each total: weight, items, price.
     var calculatePrice = function (products) {
@@ -48,11 +48,11 @@
         { title: 'Total price', value: '$' + totalPrice },
         { title: 'Total weight', value: totalWeight }
       ];
-    }
+    };
 //Letting init public, since it is the only method I will need to use outside the IIFE priceCalculator.
     return {
-      init: init 
-    }
+      init: init
+    };
   })();
 //printer is a IIFE too, this function has methods to print the results on html.
   var printer = (function () {
@@ -65,27 +65,27 @@
 
       defListNode = document.querySelectorAll('#' + definitionListId);
       defListNode = defListNode[0];
-    }
+    };
 //printer.log gets an array of objects and iterate on it using forEach , appending each object to the tag created by the init.
     var log = function (objects) {
       objects.forEach(appendObject);
-    }
+    };
 //printer.appendObject creates a dt tag with the title of the object and a dd tag with the value of the object, then append both to defListNode(dl tag).
     var appendObject = function (object) {
       var objectTitle = document.createElement('dt');
       objectTitle.innerHTML = object.title;
-      
+
       var objectValue = document.createElement('dd');
       objectValue.innerHTML = object.value;
 
       defListNode.appendChild(objectTitle);
       defListNode.appendChild(objectValue);
-    }
+    };
 //Letting init and log publics
     return {
       init: init,
       log: log
-    }
+    };
   })();
 
   printer.init('products');
